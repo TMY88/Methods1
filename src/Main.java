@@ -20,14 +20,15 @@ public class Main {
         checkLeapYear(year);
     }
     public static void checkTypeOsAndYear (int typeOS, int year) {
+        int currenYear = LocalDate.now().getYear();
         if (typeOS==0){
-            if (year >= 2015) {
+            if (year == currenYear) {
                 System.out.println("Установите версию приложения для iOS по ссылке");
             } else {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             }
         } else if (typeOS == 1) {
-            if (year >= 2015) {
+            if (year == currenYear) {
                 System.out.println("Установите версию приложения для Android по ссылке");
             } else {
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
@@ -39,9 +40,8 @@ public class Main {
     public static void task2() {
         System.out.println("Задание 2");
         int phoneOS=0;
-        //int currenYear = 2010;
-        int currenYear = LocalDate.now().getYear();
-        checkTypeOsAndYear(phoneOS, currenYear);
+        int prodPhoneYear = 2021;
+        checkTypeOsAndYear(phoneOS, prodPhoneYear);
     }
 
     public static void calculateDeliveryDate(int distance) {
